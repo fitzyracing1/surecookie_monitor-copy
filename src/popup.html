@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SureCookie</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SureCookie</h1>
+    <p class="subtitle">Cookie Auto-Acceptor</p>
+
+    <div class="setting">
+      <label for="toggle-enabled">
+        <span class="label-text">Extension Enabled</span>
+        <input type="checkbox" id="toggle-enabled" class="toggle-switch">
+      </label>
+    </div>
+
+    <div class="setting">
+      <label for="toggle-auto-accept">
+        <span class="label-text">Auto-Accept Cookies</span>
+        <input type="checkbox" id="toggle-auto-accept" class="toggle-switch">
+      </label>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Cookies accepted</div>
+      <div class="stat-value">
+        <span id="counter">0</span>
+        <button id="reset-counter" class="link-button" type="button">Reset</button>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>When enabled, SureCookie will automatically click cookie acceptance buttons on websites.</p>
+    </div>
+
+    <div class="section-title">Azure API Monitor</div>
+    <div class="card">
+      <label class="field">
+        <span class="field-label">Endpoint URL</span>
+        <input type="url" id="api-endpoint" placeholder="https://example.azurewebsites.net/api/status">
+      </label>
+
+      <label class="field">
+        <span class="field-label">Bearer token (optional)</span>
+        <input type="password" id="api-token" placeholder="eyJhbGciOi...">
+      </label>
+
+      <div class="button-row">
+        <button id="save-api-settings" type="button">Save</button>
+        <button id="fetch-api" type="button" class="primary">Fetch now</button>
+      </div>
+
+      <div class="result">
+        <div class="result-header">
+          <span id="api-status">Waiting for request</span>
+          <span id="api-updated" class="muted"></span>
+        </div>
+        <pre id="api-body">No response yet.</pre>
+      </div>
+    </div>
+
+    <div class="footer">
+      <small>SureCookie v1.0.0</small>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
